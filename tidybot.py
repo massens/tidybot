@@ -35,23 +35,21 @@ def init(name):
 		mkdir(f)
 
 	# Create files
-	create_model()
-
+	model(name)
 
 @cli.command()
 @opt('--name', default='', help='Name of the experiment')
-def create_model(name):
+def model(name):
 	"""
 	Create a new model
 	Generates a 
 	"""
 	fc = FileCreator()
-	fc.create_model(name)
+	name = fc.create_model(name)
 
-'''
-	Model: 
 
-'''
+
+
 
 
 # Helper funcitons
@@ -95,11 +93,12 @@ class FileCreator:
 		# Create output dir in /ouput
 		model_out_dir= 'output/' + name 
 		mkdir(model_out_dir)
-
+		
 		# Create model file
 		m = open(name +'.py', 'w')
 		m.write(self.model_text(name, INPUT_DIR, model_out_dir))
 		m.close()
+		return name
 						
 
 if __name__ == '__main__':
