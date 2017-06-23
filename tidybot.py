@@ -60,7 +60,7 @@ def mkdir(folder):
 
 
 class FileCreator:
-	file_contents = {"model": "'''\n\tModel: %s\n'''\n\nIN_DIR='%s'\nOUT_DIR ='%s'\n\ndef model():\n\ndef main():\n\nif __name__ == '__main__':\n\tmain()"}
+	file_contents = {"model": "'''\n\tModel: %s\n'''\n\nIN_DIR='%s'\nOUT_DIR ='%s'\n\ndef get_model():\n\ndef main():\n\nif __name__ == '__main__':\n\tmain()"}
 
 	def __init__(self):
 		pass
